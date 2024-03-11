@@ -10,16 +10,18 @@ post '/' do
     @email = params[:email]
     @date_time = params[:date_time]
 
-    @title = 'Дякуєм!'
-    @message = "Шановний #{@user_name} ваше звернення прийнято."
-
     f = File.open('./public/user.txt', 'a')
     f.write "User: #{@user_name}, Phone: #{@phone}, Email: #{@email}, Date: #{@date_time}\n"
     f.close
 
-    erb :message
+    erb :index
 end
 
 get '/' do
     erb :about
 end
+
+get 'contacts' do
+    erb :contacts
+end
+
