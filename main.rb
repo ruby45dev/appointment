@@ -17,11 +17,11 @@ post '/' do
     erb :index
 end
 
-get '/' do
+get '/about' do
     erb :about
 end
 
-get 'contacts' do
+get '/contacts' do
     erb :contacts
 end
 
