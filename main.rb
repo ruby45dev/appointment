@@ -4,7 +4,7 @@ get '/' do
     erb :index
 end
 
-post '/' do
+post '/welcome' do
     @user_name = params[:user_name]
     @phone = params[:phone]
     @email = params[:email]
@@ -14,7 +14,7 @@ post '/' do
     f.write "User: #{@user_name}, Phone: #{@phone}, Email: #{@email}, Date: #{@date_time}\n"
     f.close
 
-    erb :index
+    erb :welcome
 end
 
 get '/welcome' do
