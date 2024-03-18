@@ -17,6 +17,10 @@ post '/' do
     erb :index
 end
 
+get '/welcome' do
+    erb :welcome
+end
+
 get '/about' do
     erb :about
 end
