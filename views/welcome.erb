@@ -1,9 +1,9 @@
 <h1>Всім привіт!</h1>
 <p>Тут ви можете записатись на прийом!</p>
 
-<form action='/welcome' method='POST'>
+<form action='/welcome' method='POST' role='form'>
 
-    Ваше ім'я <br />
+    <%# Ваше ім'я <br />
     <input type='text' name='user_name' /> <br />
     Ваш номер телефону: <br />
     <input type='text' name= 'phone' /> <br />
@@ -12,5 +12,27 @@
     Дата візиту: <br />
     <input type='text' name='date_time' /> <br />
 
-    <input type='submit' /> <br />
+    <input type='submit' /> <br /> %>
+    <div class="mb-3">
+        <label for="name" class="form-label">Ваше ім'я:</label>
+        <input type="text" class="form-control" id="name" placeholder="Введіть ваше ім'я">
+    </div>
+    <div class="mb-3">
+        <label for="phone" class="form-label">Ваш номер телефону:</label>
+        <input type="text" class="form-control" id="phone" placeholder="Введіть ваш номер телефону">
+    </div>
+    <div class="mb-3">
+        <label for="datetime" class="form-label">Дата візиту:</label>
+        <input type="text" class="form-control" id="datetime" placeholder="Вкажіть бажану дату візиту">
+    </div>
+    <div class="mb-3">
+        <label for="datetime" class="form-label">Вибір фахівця:</label>
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Виберіть прізвище фахівця</option>
+            <option value="1">Петренко</option>
+            <option value="2">Іваненко</option>
+            <option value="3">Бугренко</option>
+        </select>
+    </div>
 </form>
+
