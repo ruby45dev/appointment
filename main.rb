@@ -10,6 +10,7 @@ post '/welcome' do
     @email = params[:email]
     @date_time = params[:date_time]
     @fio = params[:fio]
+    @error = params[:error]
 
     f = File.open('./public/user.txt', 'a')
     f.write "User: #{@user_name}, Phone: #{@phone}, Email: #{@email}, Date: #{@date_time}, FIO: #{@fio}\n"
