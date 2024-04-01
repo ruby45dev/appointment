@@ -12,6 +12,20 @@ post '/welcome' do
     @fio = params[:fio]
     @error = params[:error]
 
+    errors_answer = {
+        user_name: "Введіть ваше ім'я",
+        phone: "Введіть ваш номер телефону",
+        email: "Введіть ваш email",
+        date_time: "Введіть дату",
+        fio: "Виберіть прізвище фахівця"
+    }
+
+    errors_answer.each do |key, value|
+        if params[key] == ' '
+           @error = errors_answer[key]
+        end
+    end
+
     f = File.open('./public/user.txt', 'a')
     f.write "User: #{@user_name}, Phone: #{@phone}, Email: #{@email}, Date: #{@date_time}, FIO: #{@fio}\n"
     f.close
