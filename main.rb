@@ -23,6 +23,7 @@ post '/welcome' do
     errors_answer.each do |key, value|
         if params[key] == ' '
            @error = errors_answer[key]
+           erb :welcome
         end
     end
 
