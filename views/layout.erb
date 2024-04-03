@@ -46,14 +46,14 @@
 
     <!-- Nav Bootstrap End -->
 
-    <main>
+    <div>
         
-        <% if @error %>
+        <% if @error then %>
             <div class="alert alert-danger"><%=@error%></div>
         <% end %>
         
         <%= yield %>
-    </main>
+    </div>
 
 
 </body>

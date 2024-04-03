@@ -12,7 +12,7 @@ post '/welcome' do
     @fio = params[:fio]
     @error = params[:error]
 
-    errors_answer = {
+    errors_hash = {
         user_name: "Введіть ваше ім'я",
         phone: "Введіть ваш номер телефону",
         email: "Введіть ваш email",
@@ -20,10 +20,10 @@ post '/welcome' do
         fio: "Виберіть прізвище фахівця"
     }
 
-    errors_answer.each do |key, value|
+    errors_hash.each do |key, value|
         if params[key] == ' '
-           @error = errors_answer[key]
-           erb :welcome
+           @error = errors_hash[key]
+           return erb :welcome
         end
     end
 
