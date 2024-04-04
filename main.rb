@@ -21,7 +21,7 @@ post '/welcome' do
     }
 
     errors_answer.each do |key, value|
-        if params[key] == ' '
+        if params[key].empty?
            @error = errors_answer[key]
            erb :welcome
         end
@@ -45,4 +45,3 @@ end
 get '/contacts' do
     erb :contacts
 end
-
