@@ -9,26 +9,24 @@ post '/welcome' do
     @phone = params[:phone]
     @email = params[:email]
     @date_time = params[:date_time]
-    @fio = params[:fio]
-    @error = params[:error]
+
 
     errors_hash = {
-        user_name: "Введіть ваше ім'я",
-        phone: "Введіть ваш номер телефону",
-        email: "Введіть ваш email",
-        date_time: "Введіть дату",
-        fio: "Виберіть прізвище фахівця"
+        :user_name => "Введіть ваше ім'я",
+        :phone => "Введіть ваш номер телефону",
+        :email => "Введіть ваш email",
+        :date_time => "Введіть дату"
     }
 
     errors_hash.each do |key, value|
-        if params[key] == ' '
+        if params[key] == ""
            @error = errors_hash[key]
            return erb :welcome
         end
     end
 
     f = File.open('./public/user.txt', 'a')
-    f.write "User: #{@user_name}, Phone: #{@phone}, Email: #{@email}, Date: #{@date_time}, FIO: #{@fio}\n"
+    f.write "User: #{@user_name}, Phone: #{@phone}, Email: #{@email}, Date: #{@date_time}\n"
     f.close
 
     erb :welcome
