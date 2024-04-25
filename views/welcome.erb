@@ -1,18 +1,18 @@
 <h1 class="text-center mt-2">Всім привіт!</h1>
 <p class="text-center">Тут ви можете записатись на прийом!</p>
 
-<form action='/welcome' method='POST' role='form'>
+<form action="/welcome" method="POST" role="form">
 
-    Ваше ім'я <br />
-    <input type='text' name='user_name' /> <br />
+    Ваше ім"я <br />
+    <input type="text" name="user_name" placeholder ="Введіть імя" value="<%=@user_name%>"/> <br />
     Ваш номер телефону: <br />
-    <input type='text' name= 'phone' /> <br />
+    <input type="text" name= "phone" placeholder ="Введіть номер телефону" value="<%=@phone%>"/> <br />
     Ваш email: <br />
-    <input type='email' name='email'/> <br />
+    <input type="email" name="email" placeholder ="Введіть email" value="<%=@email%>"/> <br />
     Дата візиту: <br />
-    <input type='text' name='date_time' /> <br />
+    <input type="text" name="date_time" placeholder ="Введіть дату та час" value="<%=@date_time%>"/> <br />
 
-    <input type='submit' /> <br />
+    <input type="submit" /> <br />
 
 </form>
 
